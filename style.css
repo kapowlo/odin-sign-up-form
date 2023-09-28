@@ -1,6 +1,62 @@
 @import url("https://fonts.cdnfonts.com/css/norse");
 
+/*reset*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  /*custom properties/variable for padding and margin to be added here */
+  --norse-ff: "Norse", sans-serif;
+  --fs-small: 1rem;
+  --fs: 1.5rem;
+  --fs-XL: 3rem;
+}
+body {
+  min-height: 100vh;
+  background: bisque;
+
+  display: flex;
+  justify-content: space-between;
+}
+
 h1 {
-  color: red;
-  font-family: "Norse", sans-serif;
+  font-family: var(--norse-ff);
+  color: white;
+}
+
+button,
+input {
+  font-size: 100%;
+  font-family: inherit;
+}
+
+header {
+  background-image: url("img/bg-img-greenleafplant.avif");
+  background-size: cover;
+
+  flex: 1 1 25%;
+}
+div.wrapper-text p {
+  color: white;
+  font-size: var(--fs-XL);
+  font-family: var(--norse-ff);
+}
+.hero .copyright,
+.hero .copyright a {
+  color: white;
+}
+a:focus,
+a:hover {
+  /* when user hover his mouse above link*/
+  font-size: 1.25em;
+  text-shadow: 1px 2px green;
+}
+
+main {
+  background-color: whitesmoke;
+  /*this section should be bigger than the header i'll use flex basis to control the default size */
+  /*at minimum it will take up 50% of the page but if there's available space it'll cover up that available space */
+  flex: 1 1 50%;
 }
