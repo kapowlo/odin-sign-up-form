@@ -33,7 +33,9 @@ input {
 }
 
 header {
-  background-image: url("img/bg-img-greenleafplant.avif");
+  /*included fall back in case image does'nt load */
+  background-image: url("img/bg-img-greenleafplant.avif"),
+    linear-gradient(to right, black, rgb(123, 65, 6));
   background-size: cover;
 
   flex: 1 1 25%;
