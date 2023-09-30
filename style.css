@@ -9,9 +9,9 @@
 :root {
   /*custom properties/variable for padding and margin to be added here */
   --norse-ff: "Norse", sans-serif;
-  --fs-small: 1.25rem;
+  --fs-small: 1.09rem;
   --fs: 1.5rem;
-  --fs-XL: 3rem;
+  --fs-XL: 5rem;
   --bg-transparent: rgba(255, 255, 255, 0.28);
 }
 body {
