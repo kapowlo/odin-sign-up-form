@@ -37,28 +37,40 @@
         <form action="" method="post">
             <fieldset>
                 <legend class="legend-reposition">Let's do this!</legend>
-                <p>
-                    <label for="firstname">First Name</label>
-                    <input type="text" id="firstname">
 
+                <div class="first-row">
+                    <p>
 
-                    <label for="lastname">Last Name</label>
-                    <input type="text" id="lastname">
-                </p>
-                <p>
-                    <label for="mail">Email</label>
-                    <input type="email" id="mail">
+                        <label for="firstname">First Name </label>
+                        <input type="text" id="firstname">
 
-                    <label for="number">Phone number</label>
-                    <input type="tel" name="number" id="number">
-                </p>
-                <p>
-                    <label for="password">Password</label>
-                    <input type="password" id="password">
+                    </p>
+                    <p>
+                        <label for="lastname">Last Name</label>
+                        <input type="text" id="lastname">
+                    </p>
+                </div>
+                <div class="second-row">
+                    <p>
+                        <label for="mail">Email</label>
+                        <input type="email" id="mail">
+                    </p>
+                    <p>
+                        <label for="number">Phone number</label>
+                        <input type="tel" name="number" id="number">
+                    </p>
+                </div>
+                <div class="third-row">
+                    <p>
+                        <label for="password">Password</label>
+                        <input type="password" id="password">
+                    </p>
+                    <p>
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="confirm-password" id="confirm-password">
+                    </p>
+                </div>
 
-                    <label for="confirm-password">Confirm Password</label>
-                    <input type="confirm-password" id="confirm-password">
-                </p>
             </fieldset>
             <button>Create Account</button>
             <p>Already have an Account? <span>Login</span></p>
