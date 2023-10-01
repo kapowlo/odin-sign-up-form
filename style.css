@@ -13,17 +13,13 @@
   --fs: 1.5rem;
   --fs-XL: 5rem;
   --bg-transparent: rgba(255, 255, 255, 0.28);
+  --text-padding: 2rem;
+  --column-gap-small: 3.5em;
 }
 body {
   background: bisque;
 
   display: flex;
-}
-
-button,
-input {
-  font-size: 100%;
-  font-family: inherit;
 }
 
 header {
@@ -97,9 +93,63 @@ a:hover {
   text-shadow: 1px 2px green;
 }
 
+/*style for main section */
 main {
+  border: 4px solid dodgerblue;
+  padding: 5rem 0 5rem 0;
   background-color: whitesmoke;
+
   /*this section should be bigger than the header i'll use flex basis to control the default size */
   /*at minimum it will take up 50% of the page but if there's available space it'll cover up that available space */
   flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+}
+/*reset inputs */
+button,
+input {
+  font-size: 100%;
+  font-family: inherit;
+}
+main > p {
+  width: 41.19rem; /*55ch */ /*27.483em */ /*keep this for now but the text doesn't line up properly*/
+  padding-left: var(--text-padding);
+  margin-bottom: 1rem;
+  font-size: var(--fs);
+  font-weight: bolder;
+}
+form {
+  margin-top: 2.5rem;
+}
+fieldset {
+  height: 350px; /*will be changed */
+  border: 2px solid red;
+  padding: 2em 0 2em 2rem;
+  background-color: white;
+  /*used to position the legend and remove it from normal flow */
+  /*position: relative;*/
+}
+legend {
+  color: red;
+  /*will be used to position legend correctly  */
+  /*position: absolute;*/
+}
+fieldset div {
+  height: 100px;
+}
+.first-row {
+  display: flex;
+  column-gap: var(--column-gap-small);
+}
+.second-row {
+  display: flex;
+  column-gap: var(--column-gap-small);
+}
+.third-row {
+  display: flex;
+  column-gap: var(--column-gap-small);
+}
+input {
+  /*put each input fields below each of the labels by changing the display  */
+  display: block;
 }
