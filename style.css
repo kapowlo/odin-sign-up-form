@@ -113,7 +113,7 @@ input {
   font-family: inherit;
 }
 main > p {
-  width: 41.19rem; /*55ch */ /*27.483em */ /*keep this for now but the text doesn't line up properly*/
+  width: 43rem; /*55ch */ /*27.483em */ /*keep this for now but the text doesn't line up properly*/
   padding-left: var(--text-padding);
   margin-bottom: 1rem;
   font-size: var(--fs);
