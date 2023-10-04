@@ -79,7 +79,7 @@ div.wrapper-text p {
 .copyright {
   text-align: center;
   background-color: var(--bg-transparent);
-  font-size: var(--fs-small);
+  font-size: 36px; /*made the copyright text a lot  bigger */
   opacity: 0.69;
 }
 a {
@@ -160,8 +160,56 @@ fieldset div {
 }
 input {
   width: 19rem;
+  padding: 4px;
   /*put each input fields below each of the labels by changing the display  */
   display: block;
+}
+input:focus,
+input:hover {
+  background-color: rgba(235, 235, 235, 0.33);
+  outline: none;
+}
+
+input:invalid {
+  border: 1px solid red;
+}
+
+input:valid {
+  border: 1px solid green;
+}
+input + span {
+  /*the span element that come after the input(siblings) will be positioned relative so that I can use position absolute
+  and position the generated content relative to the span
+  */
+  position: relative;
+}
+input:required + span::after {
+  /*I will add either an asterisk * or "required"text after the span element of the input fields that are required */
+  content: "required";
+  color: white;
+  background-color: black;
+
+  /*position the required or asterisk to the top right just above my input fields */
+  position: absolute;
+  right: -365px;
+  top: -57px;
+}
+
+input + span::before {
+  /*position the ✖ and ✓ to the top right and inside of input fields */
+  position: absolute;
+  right: -379px;
+  top: -35px;
+}
+input:invalid + span::before {
+  /*add an x when input field is invalid */
+  content: " ✖ ";
+  color: red;
+}
+input:valid + span::before {
+  /*add an ✓ when input field is valid */
+  content: "✓";
+  color: darkgreen;
 }
 
 button {
