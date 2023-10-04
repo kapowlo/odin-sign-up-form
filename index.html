@@ -43,8 +43,8 @@
                     <p>
 
                         <label for="firstname">First Name </label>
-                        <input type="text" id="firstname">
-
+                        <input type="text" id="firstname" required minlength="5" maxlength="24">
+                        <span></span>
                     </p>
                     <p>
                         <label for="lastname">Last Name</label>
@@ -54,21 +54,26 @@
                 <div class="second-row">
                     <p>
                         <label for="mail">Email</label>
-                        <input type="email" id="mail">
+                        <input type="email" id="mail" required>
+                        <span></span>
                     </p>
                     <p>
                         <label for="number">Phone number</label>
-                        <input type="tel" name="number" id="number">
+                        <input type="tel" name="number" id="number" pattern="([\d]){3}-([\d]){3}-([\d]){4}$"
+                            placeholder="ex:555-555-5555">
+                        <span></span>
                     </p>
                 </div>
                 <div class="third-row">
                     <p>
                         <label for="password">Password</label>
-                        <input type="password" id="password">
+                        <input type="password" id="password" required minlength="8">
+                        <span></span>
                     </p>
                     <p>
                         <label for="confirm-password">Confirm Password</label>
-                        <input type="confirm-password" id="confirm-password">
+                        <input type="password" id="confirm-password" required>
+                        <span></span>
                     </p>
                 </div>
 
