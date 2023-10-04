@@ -32,7 +32,6 @@ header {
   background-size: cover;
 }
 .hero {
-  border: 4px solid purple;
   height: inherit;
 
   display: flex;
@@ -96,7 +95,6 @@ a:hover {
 
 /*style for main section */
 main {
-  border: 4px solid dodgerblue;
   padding: 5rem 0 5rem 0;
   background-color: whitesmoke;
 
@@ -129,16 +127,21 @@ form {
 }
 fieldset {
   height: 350px; /*will be changed */
-  border: 2px solid red;
-  padding: 2em 0 2em 2rem;
+  border: none;
+  padding: 2.9em 0 2em 2rem;
   background-color: white;
-  /*used to position the legend and remove it from normal flow */
-  /*position: relative;*/
+  /*used to position the legend */
+  position: relative;
 }
 legend {
-  color: red;
+  margin-top: 1rem;
+
+  font-size: var(--fs);
+  color: black;
+  font-weight: bold;
   /*will be used to position legend correctly  */
-  /*position: absolute;*/
+  position: absolute;
+  top: -5px;
 }
 fieldset div {
   height: 100px;
