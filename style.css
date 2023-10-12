@@ -211,6 +211,19 @@ input:valid + span::before {
   content: "✓";
   color: darkgreen;
 }
+/*remove the red x and green check mark when inputs have class error or matching */
+input.error:valid + span::before {
+  content: "";
+}
+input.error:invalid + span::before {
+  content: "";
+}
+input.matching:valid + span::before {
+  content: "";
+}
+input.matching:invalid + span::before {
+  content: "";
+}
 
 button {
   margin: 2rem;
