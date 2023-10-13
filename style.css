@@ -225,6 +225,18 @@ input.matching:invalid + span::before {
   content: "";
 }
 
+.toggleText {
+  border-bottom: 1px solid black;
+  font-size: 15px;
+  font-weight: bold;
+  color: red;
+  font-style: italic;
+
+  position: absolute;
+  top: 320px;
+  right: 535px;
+}
+
 button {
   margin: 2rem;
   padding: 6px 10px;
