@@ -157,6 +157,7 @@ fieldset div {
 .third-row {
   display: flex;
   column-gap: var(--column-gap-small);
+  position: relative;
 }
 input {
   width: 19rem;
@@ -233,7 +234,7 @@ input.matching:invalid + span::before {
   font-style: italic;
 
   position: absolute;
-  top: 320px;
+  top: 60px;
   right: 535px;
 }
 
