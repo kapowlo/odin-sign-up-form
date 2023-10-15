@@ -11,50 +11,42 @@ create the span element and add the class toggleText add text content to it
 const myToggleSpan=document.createElement("span")
 myToggleSpan.classList.add("toggleText")
 myToggleSpan.textContent="Passwords Do Not Match"
-console.log(myToggleSpan)
+
 
 // select the last div and append new span element to it
 const lastDiv=document.querySelector(".third-row")
-console.log(lastDiv)
 lastDiv.appendChild(myToggleSpan)
 
-/* separate event for the password field, as long as user enters a valid password and both passwords fields match...
-(border should be green)
+/* separate events for the password fields, as long as user enters a valid password and both passwords fields match...
+(border should be green) otherwise border of both pw fields  will be red 
 */
 password.addEventListener("input",()=>{
-    // pw is too short or empty
-    if(password.validity.tooShort || password.value.trim()===""){ // when both field are empty there is a bug 
-        password.setCustomValidity("make sure both password fields math each other and have at least 8 characters")// this message appears after clicking the btn if password is too short or doesn't both pw don't match each other
+    /*if pw is too short,the second condition with trim() is there to avoid bug when user enters something in pw field and then removes it
+    if both field are empty the class matching would get added to the pw fields and their border would be green */
+    if(password.validity.tooShort || password.value.trim()===""){ 
+        password.setCustomValidity("make sure both password fields math each other and have at least 8 characters")// this message appears after clicking the btn if password is too short or both pw don't match each other
        
-        /* password.classList.remove("matching")
-        password.classList.add("error") */
-
-        // pw is too short
+        // add error class to both pw fields
         addErrorClass(password)
         addErrorClass(confirmPassword)
-        // we call this func after adding the class to the pw fields
+        // call this func after adding the class to the pw fields
         setBorder()
 
-       /*  password.style.setProperty("border", "1px solid red") */
-
+      
+    //when password is too short  set span element's text content
        myToggleSpan.textContent="Password is too Short!"
        myToggleSpan.style.setProperty("color","red")
     }
     else if(password.value!==confirmPassword.value){
 
-       /*  password.classList.remove("matching")
-        password.classList.add("error") */
-
-       /*  password.style.setProperty("border", "1px solid red")
-        confirmPassword.style.setProperty("border", "1px solid red")*/
-
-        //pw don't match error class is added
+        // add error class to both pw fields
         addErrorClass(password)
         addErrorClass(confirmPassword)
+        // call this func after adding the class to the pw fields
         setBorder()
 
 
-        //when passwords don't match
+        //when passwords don't match set span element's text content
         myToggleSpan.textContent="Passwords Do Not Match!"
         myToggleSpan.style.setProperty("color","red")
 
@@ -62,19 +54,13 @@ password.addEventListener("input",()=>{
     else {
        console.log("valid password entered")
 
-       /*  password.classList.add("matching")
-        password.classList.remove("error") */
-
-       /*  password.style.setProperty("border", "1px solid green")
-        confirmPassword.style.setProperty("border", "1px solid green")
-       */
-
-        //pw match
+        // add matching class to both pw fields
         addMatchingClass(password)
         addMatchingClass(confirmPassword)
+        // call this func after adding the class to the pw fields
         setBorder()
 
-        // when passwords match
+        // when passwords match and are valid set the span element's text content
         myToggleSpan.textContent="Passwords are Matching!"
         myToggleSpan.style.setProperty("color","green")
     }
@@ -85,55 +71,44 @@ password.addEventListener("input",()=>{
 confirmPassword.addEventListener("input",()=>{
     if (password.value !== confirmPassword.value){
         
-       /*  confirmPassword.classList.add("error") 
-        password.classList.add("error") */
-
-      /*   confirmPassword.style.setProperty("border", "1px solid rgb(237, 75, 75)");
-        password.style.setProperty("border", "1px solid rgb(237, 75, 75)");
- */
-        // when passwords do not match
+        // when passwords do not match set the span element's text content
         myToggleSpan.textContent="Passwords Do Not Match!"
         myToggleSpan.style.setProperty("color","red")
 
-      /*   if(confirmPassword.classList.contains("matching")){ 
-            confirmPassword.classList.remove("matching") 
-            password.classList.remove("matching") 
-        }  */
-
-        // pw don't match
+        // add error class to both pw fields
         addErrorClass(password)
         addErrorClass(confirmPassword)
         setBorder()
 
 
     }
-    if(password.validity.tooShort || password.value.trim()===""){ /*other use conditional test with confirm password field confirmpassword.validity.tooShort or smth else */
-          // pw is too short or empty
+
+    /*pw is too short, the second condition with trim() is there to avoid bug ,when user enters something pw field and then removes
+    if both field were empty the class matching would get added to the pw fields and their border would be green */
+    else if(password.validity.tooShort || password.value.trim()===""){ 
+
+        /*when the confirm password is too short but matches, 
+        show appropriate message password is too short instead of password do not match*/
+       myToggleSpan.textContent="Password is too Short!"
+        myToggleSpan.style.setProperty("color","red")
+
+          // add error class to both pw fields
           addErrorClass(password)
           addErrorClass(confirmPassword)
           setBorder()
 
     }
 
-    else if(password.value===confirmPassword.value && !password.validity.tooShort){
+    // both pw fields match and the password isn't too short
+    else if(password.value===confirmPassword.value && !password.validity.tooShort){ 
         console.log("both passwords match and are valid")
-       /*  confirmPassword.classList.remove("error")
-        password.classList.remove("error") */
-
-      /*  confirmPassword.classList.add("matching")
-            password.classList.add("matching")*/
-
-        //add func call here after adding the matching class
-
-        /* confirmPassword.style.setProperty("border", "1px solid green");
-        password.style.setProperty("border", "1px solid green")*/
-
-        //when passwords are valid and match change text content plus style this span differently
+      
+        // when passwords match set the span element's text content
         myToggleSpan.textContent="Passwords are Matching!"
         myToggleSpan.style.setProperty("color","green")
 
 
-         // pw  match and isn't too short
+         // add matching class to both pw fields
         addMatchingClass(password)
         addMatchingClass(confirmPassword)
         setBorder()
@@ -143,18 +118,8 @@ confirmPassword.addEventListener("input",()=>{
     console.log(`hello this is the content of the  password ${password.value}`) //remove when everything works
 })
 
-function addMatchingClass(passwordField){ // add matching class to pw fields and remove error class from both pw field
-    /* confirmPassword.classList.add("matching")
-    password.classList.add("matching") */
-
-   /*  if(confirmPassword.classList.contains("error")){ 
-        confirmPassword.classList.remove("error") 
-        password.classList.remove("error") 
-    } 
-    if(password.classList.contains("error")){ 
-        confirmPassword.classList.remove("error") 
-        password.classList.remove("error") 
-    }  */
+function addMatchingClass(passwordField){ // remove error class from both pw fields and adds matching class to pw fields
+   
     if(passwordField.classList.contains("error")){
         passwordField.classList.remove("error")
     }
@@ -163,18 +128,8 @@ function addMatchingClass(passwordField){ // add matching class to pw fields and
     return passwordField.classList.add("matching")
 }
 
-function addErrorClass(passwordField){ // add error class to pw fields and remove matching class from both pw field
-   /*  confirmPassword.classList.add("error") 
-    password.classList.add("error")
-    
-    if(confirmPassword.classList.contains("error")){ 
-        confirmPassword.classList.remove("error") 
-        password.classList.remove("error") 
-    } 
-    if(password.classList.contains("error")){ 
-        confirmPassword.classList.remove("error") 
-        password.classList.remove("error") 
-    }  */
+function addErrorClass(passwordField){ // remove matching class from both pw fields and adds error class to pw fields
+  
     if(passwordField.classList.contains("matching")){
         passwordField.classList.remove("matching")
     }
@@ -182,10 +137,9 @@ function addErrorClass(passwordField){ // add error class to pw fields and remov
     return passwordField.classList.add("error")
 }
 
-function setBorder(){ // if pw field have the proper class set proper border and remove class
+function setBorder(){ // adds a border to pw field depending on the class they have red=error green=matching
     if(confirmPassword.classList.contains("matching") && password.classList.contains("matching")){
-       /*  confirmPassword.classList.remove("error")
-        password.classList.remove("error") */
+      
         confirmPassword.style.setProperty("border", "1px solid green");
         password.style.setProperty("border", "1px solid green")
     }
