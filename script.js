@@ -23,7 +23,7 @@ lastDiv.appendChild(myToggleSpan)
 */
 password.addEventListener("input",()=>{
     if(password.validity.tooShort){
-        password.setCustomValidity("make sure password has at least 8 characters")// this message should appear after clicking the create btn if password is too short
+        password.setCustomValidity("make sure both password fields math each other and have at least 8 characters")// this message appears after clicking the btn if password is too short or doesn't both pw don't match each other
         password.classList.remove("matching")
         password.classList.add("error")
         password.style.setProperty("border", "1px solid red")
@@ -56,7 +56,6 @@ password.addEventListener("input",()=>{
 // if both password field don't match or aren't valid the border will be set to red
 confirmPassword.addEventListener("input",()=>{
     if (password.value !== confirmPassword.value){
-        confirmPassword.setCustomValidity("passwords do not match!");
         confirmPassword.classList.add("error") 
         password.classList.add("error") 
         confirmPassword.style.setProperty("border", "1px solid rgb(237, 75, 75)");
