@@ -18,8 +18,6 @@
 }
 
 body {
-  background: bisque;
-
   display: flex;
 }
 
@@ -95,6 +93,7 @@ a:hover {
 
 /*style for main section */
 main {
+  height: 110vh;
   padding: 5rem 0 5rem 0;
   background-color: whitesmoke;
 
@@ -235,7 +234,7 @@ input.matching:invalid + span::before {
 
   position: absolute;
   top: 60px;
-  right: 535px;
+  right: 527px;
 }
 
 button {
