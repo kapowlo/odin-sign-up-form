@@ -13,74 +13,75 @@
 
 <body>
 
-    <header>
-        <div class="hero">
-            <div class="container-img-text">
-                <div class="wrapper-img">
-                    <img src="img/logo-img-viking.webp" alt="a cool looking viking hat" width="188" height="188">
+    <main class="container">
+        <section class="left-section">
+            <div class="hero">
+                <div class="container-img-text">
+                    <div class="wrapper-img">
+                        <img src="img/logo-img-viking.webp" alt="a cool looking viking hat" width="188" height="188">
+                    </div>
+                    <div class="wrapper-text">
+                        <p>Odin</p>
+                    </div>
                 </div>
-                <div class="wrapper-text">
-                    <p>Odin</p>
-                </div>
+
+                <p class="copyright">Photo by Halie West on <a href="https://unsplash.com/photos/25xggax4bSA"
+                        target="_blank">Unsplash.com</a>
+                </p>
             </div>
+        </section>
 
-            <p class="copyright">Photo by Halie West on <a href="https://unsplash.com/photos/25xggax4bSA"
-                    target="_blank">Unsplash.com</a>
-            </p>
-        </div>
-    </header>
+        <section class="right-section">
+            <p>This is not a real online service! you know you need something <br>
+                like this in your life to help you realize your deepest dreams. <br>
+                Sign up now to get started <br>You know you want to
+            <form action="" method="post">
+                <fieldset>
+                    <legend class="legend-reposition">Let's do this!</legend>
 
-    <main>
-        <p>This is not a real online service! you know you need something
-            like this in your life to help you realize your deepest dreams.
-            Sign up now to get started.</p>
-        <p>You know you want to.</p>
-        <form action="" method="post">
-            <fieldset>
-                <legend class="legend-reposition">Let's do this!</legend>
+                    <div class="first-row">
+                        <p>
 
-                <div class="first-row">
-                    <p>
+                            <label for="firstname">First Name </label>
+                            <input type="text" id="firstname" required minlength="5" maxlength="24">
+                            <span></span>
+                        </p>
+                        <p>
+                            <label for="lastname">Last Name</label>
+                            <input type="text" id="lastname">
+                        </p>
+                    </div>
+                    <div class="second-row">
+                        <p>
+                            <label for="mail">Email</label>
+                            <input type="email" id="mail" required>
+                            <span></span>
+                        </p>
+                        <p>
+                            <label for="number">Phone number</label>
+                            <input type="tel" name="number" id="number" pattern="([\d]){3}-([\d]){3}-([\d]){4}$"
+                                placeholder="ex:555-555-5555">
+                            <span></span>
+                        </p>
+                    </div>
+                    <div class="third-row">
+                        <p>
+                            <label for="password">Password</label>
+                            <input type="password" id="password" required minlength="8">
+                            <span></span>
+                        </p>
+                        <p>
+                            <label for="confirm-password">Confirm Password</label>
+                            <input type="password" id="confirm-password" required minlength="8">
+                            <span></span>
+                        </p>
+                    </div>
 
-                        <label for="firstname">First Name </label>
-                        <input type="text" id="firstname" required minlength="5" maxlength="24">
-                        <span></span>
-                    </p>
-                    <p>
-                        <label for="lastname">Last Name</label>
-                        <input type="text" id="lastname">
-                    </p>
-                </div>
-                <div class="second-row">
-                    <p>
-                        <label for="mail">Email</label>
-                        <input type="email" id="mail" required>
-                        <span></span>
-                    </p>
-                    <p>
-                        <label for="number">Phone number</label>
-                        <input type="tel" name="number" id="number" pattern="([\d]){3}-([\d]){3}-([\d]){4}$"
-                            placeholder="ex:555-555-5555">
-                        <span></span>
-                    </p>
-                </div>
-                <div class="third-row">
-                    <p>
-                        <label for="password">Password</label>
-                        <input type="password" id="password" required minlength="8">
-                        <span></span>
-                    </p>
-                    <p>
-                        <label for="confirm-password">Confirm Password</label>
-                        <input type="password" id="confirm-password" required minlength="8">
-                        <span></span>
-                    </p>
-                </div>
-
-            </fieldset>
-            <button>Create Account</button>
-            <p>Already have an Account? <span>Login</span></p>
-        </form>
+                </fieldset>
+                <button>Create Account</button>
+                <p>Already have an Account? <span>Login</span></p>
+            </form>
+        </section>
     </main>
 
 </body>
