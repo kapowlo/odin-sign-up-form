@@ -13,8 +13,9 @@ myToggleSpan.classList.add("toggleText")
 myToggleSpan.textContent="Passwords Do Not Match"
 
 
-// select the last div and append new span element to it
-const lastDiv=document.querySelector(".third-row")
+// select the last paragraph the one with Confirm-Password label and append new span element
+// the text should appear under confirm-password input field
+const lastDiv=document.querySelector(".third-row > p + p")
 lastDiv.appendChild(myToggleSpan)
 
 /* separate events for the password fields, as long as user enters a valid password and both passwords fields match...
