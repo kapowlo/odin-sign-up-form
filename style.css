@@ -15,14 +15,16 @@
   --bg-transparent: rgba(255, 255, 255, 0.28);
   --text-padding: 2rem;
   --column-gap-small: 3.5em;
+  --margin-small: 2rem;
 }
 
 body {
+  /*  height: 100vh; */
   border: 4px solid purple;
 }
 
 main.container {
-  border: 2px solid red;
+  border: 8px solid red;
   display: flex;
   height: 100vh;
 }
@@ -30,7 +32,6 @@ main.container {
 .left-section {
   flex: 1 1 40%;
   border: 2px solid purple;
-
   background-image: url("img/bg-img-greenleafplant.avif"),
     linear-gradient(to right, black, rgb(123, 65, 6));
   background-size: cover;
@@ -98,12 +99,15 @@ a:hover {
   text-shadow: 1px 2px green;
 }
 
-/*style for main section */
+/*style for right-section */
 .right-section {
+  /*  border: 8px solid red; */
   padding: 5rem 0 5rem 0;
   background-color: whitesmoke;
-
-  flex: 1 1 60%;
+  width: 60vw; /*when I resize the webpage the p text shrinks,which allows users to see the whole text  */
+  /*  flex: 1 1 auto; */ /*no longer needed because of line above */
+  display: flex;
+  flex-direction: column;
 }
 /*make form appearance more consistent across browsers */
 button,
@@ -112,22 +116,30 @@ input {
   font-family: inherit;
 }
 .right-section > p {
-  width: 43rem;
+  border: 2px solid purple;
+  width: clamp(
+    10%,
+    80%,
+    90%
+  ); /*never go above 90% or below 10% of the parent's width aim for 80%, 
+  user can now see the paragraph text a bit better when they shrink the webpage */
   padding-left: var(--text-padding);
   margin-bottom: 1rem;
   font-size: var(--fs);
   font-weight: bolder;
 }
+
 fieldset ~ p {
   /*selects every p element that is preceded by a fieldset element
   this will only select the p element that is outside of my fieldset */
   padding-left: var(--text-padding);
+  border: 2px solid red;
 }
 form {
+  /*  width: 100%; */
   margin-top: 2.5rem;
 }
 fieldset {
-  height: 350px; /*will be changed */
   border: none;
   padding: 2.9em 0 2em 2rem;
   background-color: white;
@@ -149,20 +161,24 @@ fieldset div {
 }
 .first-row {
   display: flex;
+  flex-wrap: wrap; /*make the input field wrap on the next line on screen resize */
   column-gap: var(--column-gap-small);
 }
 .second-row {
   display: flex;
+  flex-wrap: wrap; /*make the input field wrap on the next line on screen resize */
   column-gap: var(--column-gap-small);
 }
 .third-row {
   display: flex;
+  flex-wrap: wrap; /*make the input field wrap on the next line on screen resize */
   column-gap: var(--column-gap-small);
   position: relative;
 }
+
 input {
   width: 19rem;
-  padding: 4px;
+  padding: 2px;
   /*put each input fields below each of the labels by changing the display  */
   display: block;
 }
@@ -233,15 +249,13 @@ input.matching:invalid + span::before {
   font-weight: bold;
   color: red;
   font-style: italic;
-
-  position: absolute;
-  top: 60px;
-  right: 527px;
 }
 
 button {
-  margin: 2rem;
   padding: 6px 10px;
+  margin-left: var(
+    --margin-small
+  ); /*button is now aligned properly with everything else */
   width: 210px;
   border-radius: 6px;
   background-color: #176717;
