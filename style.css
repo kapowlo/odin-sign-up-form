@@ -19,7 +19,6 @@
 }
 
 body {
-  /*  height: 100vh; */
   border: 4px solid purple;
 }
 
@@ -41,6 +40,7 @@ main.container {
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between; /*creates space between the copyright text and the transparent div*/
 }
 .container-img-text {
   /*create some space for the logo and the text inside */
@@ -83,7 +83,7 @@ div.wrapper-text p {
 .copyright {
   border: 2px solid orange;
   padding: 15px;
-  margin-top: auto;
+  margin-bottom: 3rem; /*makes the copyright text visible without needing to scroll down */
   text-align: center;
   background-color: var(--bg-transparent);
   font-size: 26px; /*made the copyright text a lot  bigger */
@@ -137,7 +137,6 @@ fieldset ~ p {
   border: 2px solid red;
 }
 form {
-  /*  width: 100%; */
   margin-top: 2.5rem;
 }
 fieldset {
