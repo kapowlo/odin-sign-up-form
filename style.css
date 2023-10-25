@@ -26,7 +26,8 @@ body {
 main.container {
   border: 8px solid red;
   display: flex;
-  height: 100vh;
+  /*when I resized the page some of the content would overflow, adding min-height stops content from overflowing */
+  min-height: 100vh;
 }
 
 .left-section {
@@ -118,11 +119,11 @@ input {
 .right-section > p {
   border: 2px solid purple;
   width: clamp(
-    10%,
+    2rem,
     80%,
-    90%
-  ); /*never go above 90% or below 10% of the parent's width aim for 80%, 
-  user can now see the paragraph text a bit better when they shrink the webpage */
+    50vw
+  ); /*never go above 50vw or below 2rem(32px) but aim for 80%, 
+  user can now see the paragraph text a bit better when they shrink the webpage*/
   padding-left: var(--text-padding);
   margin-bottom: 1rem;
   font-size: var(--fs);
@@ -141,7 +142,7 @@ form {
 }
 fieldset {
   border: none;
-  padding: 2.9em 0 2em 2rem;
+  padding: 2.6rem 0 1rem 2rem;
   background-color: white;
   /*used to position the legend */
   position: relative;
@@ -253,7 +254,7 @@ input.matching:invalid + span::before {
 
 button {
   padding: 6px 10px;
-  margin-left: var(
+  margin: var(
     --margin-small
   ); /*button is now aligned properly with everything else */
   width: 210px;
